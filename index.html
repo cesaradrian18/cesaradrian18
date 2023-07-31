@@ -6,7 +6,7 @@
   <title>Mis Datos Personales</title>
   <!-- Enlaces a las hojas de estilo de Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script>
+<script>
   // Esta función actualiza el valor de la barra de progreso
   function updateProgressBar(value) {
     $(".progress-bar").css("width", value + "%").attr("aria-valuenow", value);
@@ -14,7 +14,13 @@
 
   // Cuando la página esté completamente cargada, establece el valor de la barra de progreso en 100%
   $(window).on("load", function () {
+    // Actualiza el valor de la barra de progreso al 100%
     updateProgressBar(100);
+
+    // Agrega un retraso de 1 segundo (1000 ms) antes de ocultar la barra de progreso
+    setTimeout(function () {
+      $(".progress").fadeOut(500); // Oculta la barra de progreso con una animación de fundido durante 0.5 segundos (500 ms)
+    }, 1000); // 1000 ms = 1 segundo
   });
 </script>
 
